@@ -1,9 +1,9 @@
 ---
 title: "wanb"
-description: "Pagination works regardless of folder name."
+description: "work"
 date: "2025-06-03"
 tags:
-  - example
+  - 工作
 ---
 
 ## 公共方法
