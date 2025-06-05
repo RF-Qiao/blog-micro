@@ -66,6 +66,30 @@ git stash pop      # 恢复暂存的修改
 git branch -a  查看所有分支 包括远程分支
 git checkout -b  <new-branch > 创建并切换新的分支
 ```
+### 流程相关问题
+#### 方法机
+方法机报错信息需要给下个节点的情况：
+![img.png](img.png)
+
+Java代码：
+```java
+   public static String pnSignPDF(ObjectReference self, PromotionNotice promotionNotice) throws Exception {
+        String err = "执行成功";
+        try {
+        } catch (Exception e) {
+            e.printStackTrace();
+            err = "执行失败：" + e.toString();
+        }
+        return err;
+    }
+```
+在下一节点查看并走对应路由
+![img_1.png](img_1.png)
+增加失败原因在下个节点 
+
+注意: 初始化值要在特性中设置。
+![img_2.png](img_2.png)
+重新电子签名要在路由先择时间中填写。
 
 ### 部署手册
 1. 编译部署 ant -f wanb.xml jc
