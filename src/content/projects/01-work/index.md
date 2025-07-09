@@ -98,3 +98,9 @@ Java代码：
   wt.services/svc/default/com.ptc.core.components.descriptor.DataUtility/GYZYChangeDataUtility/java.lang.Object/0=ext.wbgy.doc.dataUtility.GYZYChangeDataUtility/duplicate
 - 增加filter配置(工艺平台 快速链接 按钮过滤）)
     wt.services/svc/default/com.ptc.core.ui.validation.SimpleValidationFilter/GYLibraryFilter/null/0=ext.wbgy.validator.GYLibraryFilter/duplicate
+ 
+
+- 工艺预变更流程
+![img_3.png](img_3.png)
+在 启动工艺变更节点执行(startGYChangeProcess)
+针对当前M视图成品物料并收集所有子件作为受影响对象，创建ECN，启动"工艺变更业务流程"；
