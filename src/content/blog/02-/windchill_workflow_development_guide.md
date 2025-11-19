@@ -1,3 +1,11 @@
+---
+title: "windchill"
+description: ""
+date: "2025-11-19"
+tags:
+  - JAVA
+---
+
 # Windchill工作流开发进阶指南：从思想到实践
 
 ## 引言
