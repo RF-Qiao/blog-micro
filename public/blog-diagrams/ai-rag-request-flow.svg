@@ -1,0 +1,32 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="700" fill="#F8F7F3"/>
+  <text x="72" y="76" fill="#14213D" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">RAG Request Flow</text>
+  <text x="72" y="112" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="18">Retrieval-augmented generation is not a single step; it is a pipeline with multiple quality checkpoints</text>
+
+  <rect x="90" y="210" width="150" height="72" rx="18" fill="#1D3557"/>
+  <text x="165" y="254" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">User Query</text>
+
+  <rect x="290" y="210" width="170" height="72" rx="18" fill="#457B9D"/>
+  <text x="375" y="254" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Rewrite / Route</text>
+
+  <rect x="510" y="210" width="170" height="72" rx="18" fill="#2A9D8F"/>
+  <text x="595" y="254" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Retrieve</text>
+
+  <rect x="730" y="210" width="170" height="72" rx="18" fill="#52B788"/>
+  <text x="815" y="254" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Rerank</text>
+
+  <rect x="950" y="210" width="160" height="72" rx="18" fill="#E76F51"/>
+  <text x="1030" y="254" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Generate</text>
+
+  <path d="M240 246H290" stroke="#0F172A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M460 246H510" stroke="#0F172A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M680 246H730" stroke="#0F172A" stroke-width="4" stroke-linecap="round"/>
+  <path d="M900 246H950" stroke="#0F172A" stroke-width="4" stroke-linecap="round"/>
+
+  <rect x="90" y="366" width="1020" height="206" rx="24" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="124" y="408" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Where systems usually fail</text>
+  <text x="124" y="448" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">1. Query rewrite is weak, so the retriever never sees the real intent.</text>
+  <text x="124" y="484" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">2. Chunks are too large or too small, so evidence quality drops.</text>
+  <text x="124" y="520" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">3. Reranking is missing, so noisy passages dominate the prompt.</text>
+  <text x="124" y="556" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">4. The final answer is not forced to cite grounded context, increasing hallucinations.</text>
+</svg>

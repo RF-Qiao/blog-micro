@@ -1,0 +1,28 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" fill="#F7F5F1"/>
+  <text x="72" y="78" fill="#14213D" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">AI Evaluation &amp; Improvement Loop</text>
+  <text x="72" y="114" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="18">Treat product quality as a feedback loop, not a one-time prompt tuning exercise</text>
+
+  <circle cx="350" cy="350" r="110" fill="#E0F2FE"/>
+  <text x="350" y="340" text-anchor="middle" fill="#0C4A6E" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Production</text>
+  <text x="350" y="372" text-anchor="middle" fill="#0C4A6E" font-family="Arial, Helvetica, sans-serif" font-size="18">traces &amp; failures</text>
+
+  <circle cx="620" cy="190" r="96" fill="#DCFCE7"/>
+  <text x="620" y="180" text-anchor="middle" fill="#166534" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Eval Set</text>
+  <text x="620" y="212" text-anchor="middle" fill="#166534" font-family="Arial, Helvetica, sans-serif" font-size="18">golden cases</text>
+
+  <circle cx="900" cy="350" r="108" fill="#FFEDD5"/>
+  <text x="900" y="340" text-anchor="middle" fill="#9A3412" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Regression</text>
+  <text x="900" y="372" text-anchor="middle" fill="#9A3412" font-family="Arial, Helvetica, sans-serif" font-size="18">prompt / tool / RAG</text>
+
+  <circle cx="620" cy="540" r="96" fill="#F3E8FF"/>
+  <text x="620" y="530" text-anchor="middle" fill="#6B21A8" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Deploy</text>
+  <text x="620" y="562" text-anchor="middle" fill="#6B21A8" font-family="Arial, Helvetica, sans-serif" font-size="18">guarded rollout</text>
+
+  <path d="M443 287C499 245 533 223 553 212" stroke="#0F172A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M716 220C776 254 813 279 825 292" stroke="#0F172A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M855 452C805 484 760 505 699 523" stroke="#0F172A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M541 530C489 503 444 465 402 420" stroke="#0F172A" stroke-width="5" stroke-linecap="round"/>
+
+  <text x="112" y="658" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">Key point: store failures, turn them into eval cases, regression-test every change, and ship with rate, quality, and cost guards.</text>
+</svg>
