@@ -1,0 +1,47 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" fill="#F6F5F1"/>
+  <text x="80" y="78" fill="#14213D" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Cache Consistency Write Path</text>
+  <text x="80" y="114" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="18">A practical path: update DB, delete cache, then recover with async compensation when needed</text>
+
+  <rect x="90" y="210" width="180" height="84" rx="18" fill="#1D3557"/>
+  <text x="180" y="262" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Writer</text>
+
+  <rect x="340" y="210" width="200" height="84" rx="18" fill="#457B9D"/>
+  <text x="440" y="262" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">App Service</text>
+
+  <rect x="610" y="140" width="200" height="84" rx="18" fill="#264653"/>
+  <text x="710" y="192" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">MySQL</text>
+
+  <rect x="610" y="280" width="200" height="84" rx="18" fill="#E76F51"/>
+  <text x="710" y="332" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Redis</text>
+
+  <rect x="880" y="140" width="220" height="84" rx="18" fill="#2A9D8F"/>
+  <text x="990" y="186" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Outbox / MQ Event</text>
+  <text x="990" y="210" text-anchor="middle" fill="#D8FFF8" font-family="Arial, Helvetica, sans-serif" font-size="14">delete cache message</text>
+
+  <rect x="880" y="280" width="220" height="84" rx="18" fill="#6D597A"/>
+  <text x="990" y="326" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Retry / Compensate</text>
+  <text x="990" y="350" text-anchor="middle" fill="#F3E8FF" font-family="Arial, Helvetica, sans-serif" font-size="14">replay failed invalidation</text>
+
+  <path d="M270 252H340" stroke="#0F172A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M540 252C582 252 578 182 610 182" stroke="#0F172A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M540 252C582 252 578 322 610 322" stroke="#0F172A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M810 182H880" stroke="#0F172A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M990 224V280" stroke="#0F172A" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 10"/>
+
+  <polygon points="328,244 340,252 328,260" fill="#0F172A"/>
+  <polygon points="598,174 610,182 598,190" fill="#0F172A"/>
+  <polygon points="598,314 610,322 598,330" fill="#0F172A"/>
+  <polygon points="868,174 880,182 868,190" fill="#0F172A"/>
+  <polygon points="982,268 990,280 998,268" fill="#0F172A"/>
+
+  <circle cx="710" cy="182" r="46" stroke="#94A3B8" stroke-width="2" stroke-dasharray="6 6"/>
+  <text x="710" y="98" text-anchor="middle" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="18">1. Update DB</text>
+  <text x="710" y="416" text-anchor="middle" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="18">2. Delete cache</text>
+  <text x="990" y="98" text-anchor="middle" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="18">3. Async compensation</text>
+
+  <rect x="92" y="520" width="1018" height="116" rx="18" fill="#FFFCF6" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="126" y="560" fill="#0F172A" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Interpretation</text>
+  <text x="126" y="592" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">Use Cache Aside as the mainline, and treat failed invalidation as a first-class recoverable event.</text>
+  <text x="126" y="620" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">This makes consistency a managed process instead of a best-effort side effect hidden in service code.</text>
+</svg>

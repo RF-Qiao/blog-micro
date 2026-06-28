@@ -22,6 +22,10 @@ tags:
 
 这篇文章想解决的，正是从“能跑”到“能维护”的那一步。
 
+![Windchill 工作流职责分离示意图](/blog-diagrams/windchill-workflow-separation.svg)
+
+这张图展示的是本文最核心的实践原则: 流程模型负责编排，Java Helper 负责业务行为，Service 和外部 Client 负责真正的实现与集成。
+
 ## 一、工作流开发最重要的原则: 流程负责编排，Java 负责实现
 
 如果只记一个原则，我会建议记住这句:

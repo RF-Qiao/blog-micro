@@ -1,0 +1,47 @@
+<svg width="1200" height="680" viewBox="0 0 1200 680" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="680" fill="#F7F6F2"/>
+  <text x="80" y="76" fill="#14213D" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Redis Read Path Architecture</text>
+  <text x="80" y="112" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="18">Multi-level cache, hotspot protection, and fallback path</text>
+
+  <rect x="90" y="190" width="180" height="88" rx="18" fill="#1D3557"/>
+  <text x="180" y="243" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Client</text>
+
+  <rect x="350" y="190" width="220" height="88" rx="18" fill="#457B9D"/>
+  <text x="460" y="228" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">App Service</text>
+  <text x="460" y="254" text-anchor="middle" fill="#DCEFFD" font-family="Arial, Helvetica, sans-serif" font-size="15">many instances</text>
+
+  <rect x="650" y="120" width="220" height="88" rx="18" fill="#2A9D8F"/>
+  <text x="760" y="158" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">Local Cache</text>
+  <text x="760" y="184" text-anchor="middle" fill="#D8FFF8" font-family="Arial, Helvetica, sans-serif" font-size="15">Caffeine / Guava</text>
+
+  <rect x="650" y="250" width="220" height="88" rx="18" fill="#E76F51"/>
+  <text x="760" y="288" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">Redis Cluster</text>
+  <text x="760" y="314" text-anchor="middle" fill="#FFF1ED" font-family="Arial, Helvetica, sans-serif" font-size="15">shared distributed cache</text>
+
+  <rect x="650" y="380" width="220" height="88" rx="18" fill="#6D597A"/>
+  <text x="760" y="418" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">Hot Key Guard</text>
+  <text x="760" y="444" text-anchor="middle" fill="#F3E8FF" font-family="Arial, Helvetica, sans-serif" font-size="15">mutex / singleflight / refresh</text>
+
+  <rect x="950" y="250" width="170" height="88" rx="18" fill="#264653"/>
+  <text x="1035" y="288" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">MySQL</text>
+  <text x="1035" y="314" text-anchor="middle" fill="#D9F0EE" font-family="Arial, Helvetica, sans-serif" font-size="15">final fallback</text>
+
+  <path d="M270 234H350" stroke="#0F172A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M570 234H650" stroke="#0F172A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M570 250C616 250 616 164 650 164" stroke="#0F172A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M570 260C616 260 616 424 650 424" stroke="#0F172A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M870 294H950" stroke="#0F172A" stroke-width="5" stroke-linecap="round"/>
+
+  <polygon points="338,226 350,234 338,242" fill="#0F172A"/>
+  <polygon points="638,156 650,164 638,172" fill="#0F172A"/>
+  <polygon points="638,226 650,234 638,242" fill="#0F172A"/>
+  <polygon points="638,416 650,424 638,432" fill="#0F172A"/>
+  <polygon points="938,286 950,294 938,302" fill="#0F172A"/>
+
+  <rect x="92" y="520" width="1018" height="100" rx="18" fill="#FFFDF8" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="126" y="560" fill="#0F172A" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Key design points</text>
+  <text x="126" y="592" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">1. Read hottest data from local cache first to cut Redis pressure.</text>
+  <text x="126" y="620" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">2. Use Redis as shared cache, and let MySQL serve only real cache misses.</text>
+  <text x="640" y="592" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">3. Add hot key protection so expiration spikes do not punch through to DB.</text>
+  <text x="640" y="620" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="18">4. This is a reference architecture diagram, matching the article discussion.</text>
+</svg>
