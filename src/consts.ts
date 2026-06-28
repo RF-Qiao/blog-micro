@@ -25,9 +25,4 @@ export const PROJECTS: Metadata = {
 };
 
 export const SOCIALS: Socials = [
-  {
-    NAME: "GitHub",
-    HREF: "https://github.com/RF-Qiao",
-  },
-
 ];
